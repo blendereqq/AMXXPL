@@ -91,14 +91,13 @@ if(!g_bSuspected[id]) {
 
 for (new i = 0; i < sizeof(g_CheatCvar); i++) {
 	if(containi(g_cmdLine1, g_CheatCvar[i]) != -1) {
-		if( !(get_user_flags(id) & ADMIN_LEVEL_A) ){
-		client_cmd(id, "spk ^"events/task_complete.wav^"" );
-		return PLUGIN_CONTINUE
-		}
-		else
-		{
-			ColorChat(id, GREY,"[Retard] %s uzyl komendy %s %s %s %s", name, g_cmdLine1, g_cmdLine2, g_cmdLine3, g_cmdLine4);
-		}
+		if( !(get_user_flags(id) & ADMIN_LEVEL_A) ){//cos tutaj zjebalem
+		return PLUGIN_CONTINUE//cos tutaj zjebalem
+		}//cos tutaj zjebalem
+		else//cos tutaj zjebalem
+		{//cos tutaj zjebalem
+			ColorChat(id, GREY,"[Retard] %s uzyl komendy %s %s %s %s", name, g_cmdLine1, g_cmdLine2, g_cmdLine3, g_cmdLine4);//cos tutaj zjebalem
+		}//cos tutaj zjebalem
 			
 	
 	}
