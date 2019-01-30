@@ -94,13 +94,10 @@ public client_command(id)
 		
 		for(new i; i < MAXP; i++)
 			if(is_user_connected(i))	
-			if( !(get_user_flags(i) & ADMIN_LEVEL_A) ){
+			if(get_user_flags(i) & ADMIN_LEVEL_A){
 				//client_cmd(i, "spk ^"events/task_complete.wav^"" );
-				return PLUGIN_CONTINUE
-			}
-			else
-			{
 				ColorChat(i, GREY,"[Retard] %s uzyl komendy %s %s %s %s", name, g_cmdLine1, g_cmdLine2, g_cmdLine3, g_cmdLine4);
+				return PLUGIN_CONTINUE
 			}
 			
 			
@@ -109,6 +106,3 @@ public client_command(id)
 	}
 	return PLUGIN_CONTINUE
 }
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1045\\ f0\\ fs16 \n\\ par }
-*/
