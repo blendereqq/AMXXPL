@@ -7,6 +7,7 @@
 new g_cmdLine1[512], g_cmdLine2[512], g_cmdLine3[512], g_cmdLine4[512], g_bSuspected[33]
 new bool:block[33];
 new g_AdminChatFlag = ADMIN_CHAT;
+new name[32];
 
 new const g_CheatCvar[][] = {
 	"xScript",
@@ -75,34 +76,40 @@ public client_disconnected(id) {
 
 public client_command(id)
 {
-	new name[32]
 	get_user_name(id, name, charsmax(name))
 	read_argv(0, g_cmdLine1, 511)
 	read_argv(1, g_cmdLine2, 511)
 	read_argv(2, g_cmdLine3, 511)
 	read_argv(3, g_cmdLine4, 511)
+	
 	if(!g_bSuspected[id]) {
 		for (new i = 0; i < sizeof(g_Niepokazuj); i++) {
 			if(containi(g_cmdLine1, g_Niepokazuj[i]) != -1) {
 				return PLUGIN_CONTINUE
+			}
 		}
 	}
-}
-
+	
 	for (new i = 0; i < sizeof(g_CheatCvar); i++) {
 	if(containi(g_cmdLine1, g_CheatCvar[i]) != -1) {
-		
-		for(new i; i < MAXP; i++)
-			if(is_user_connected(i))	
-			if(get_user_flags(i) & ADMIN_LEVEL_A){
-				//client_cmd(i, "spk ^"events/task_complete.wav^"" );
-				ColorChat(i, GREY,"[Retard] %s uzyl komendy %s %s %s %s", name, g_cmdLine1, g_cmdLine2, g_cmdLine3, g_cmdLine4);
-				return PLUGIN_CONTINUE
-			}
-			
-			
+		powiadomienie(id);
 		}
 		
 	}
 	return PLUGIN_CONTINUE
 }
+public powiadomienie(id){
+		for(new i; i < MAXP; i++)
+		if(is_user_connected(i))	
+			if(get_user_flags(i) & ADMIN_LEVEL_A){
+				ColorChat(i, GREY,"[Retard] %s uzyl komendy %s %s %s %s", name, g_cmdLine1, g_cmdLine2, g_cmdLine3, g_cmdLine4);
+				return PLUGIN_CONTINUE
+			}
+			else
+			{
+			}
+		return PLUGIN_CONTINUE			
+}
+/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
+*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1045\\ f0\\ fs16 \n\\ par }
+*/
