@@ -1,0 +1,26 @@
+------------------------------------------------------------
+GOMOD By DeroiD's Edytowany Przez BlendeRa
+Orginalny Plugin
+https://forums.alliedmods.net/showthread.php?t=294858
+------------------------------------------------------------
+2.2 BETA
+------------------------------------------------------------
+-dodano HUD
+-dodano Sklep z Kluczmi ,Skrzyniami
+-dodano Ruletkê
+-dodano Menu Admina
+-dodano Bonusy Za Pod³o¿enie/Rozbrojenie Bomby
+------------------------------------------------------------
+2.3 BETA
+------------------------------------------------------------
+-dodano muzykê podczas ³adowania
+-dodano blokadê zmany nicku
+-dodano wsparcie dla natywów
+-poprawiono menu dodawania skrzynek dla gracza
+------------------------------------------------------------
+------------------------------------------------------------
+Do Zrobienia
+-Menu Admina W Oddzielnym Pluginie
+-Muzyka z CSGO Pocz¹tek/Koniec Rundy Po³ozenie Bomby etc.
+
+
