@@ -61,9 +61,6 @@ public client_putinserver(id)
 
 public client_disconnect(id)
 {
-	//user_time[id] = dr_gettime(id, 0)
-	//user_currenttime[id] = dr_gettime(id, 1)
-	
 	new authid[35]
 	get_user_authid(id, authid, charsmax(authid))
 	
@@ -121,16 +118,6 @@ public knifemenu(id, key) {
 	}
 	return PLUGIN_CONTINUE
 } 
-/*
-public CurWeapon(id)
-{
-	new Weapon = read_data(2)	
-	// Set Knife Model
-	SetKnife(id, knife_model[id])   
-	
-	return PLUGIN_HANDLED   
-	
-}*/
 public CurWeapon(id)
 {
 	SetKnife(id, knife_model[id])   
@@ -258,25 +245,25 @@ public SaveData(id, authid[35])
 
 LoadData(id)
 {
-new authid[35]
-get_user_authid(id, authid, charsmax(authid))
+	new authid[35]
+	get_user_authid(id, authid, charsmax(authid))
 
-new vaultkey[64], vaultdata[256]
+	new vaultkey[64], vaultdata[256]
 
-format(vaultkey, charsmax(vaultkey), "%s", authid)
-format(vaultdata, charsmax(vaultdata), "%i#", knife_model[id])
-nvault_get(g_vault, vaultkey, vaultdata, charsmax(vaultdata))
-replace_all(vaultdata, charsmax(vaultdata), "#", " ")
+	format(vaultkey, charsmax(vaultkey), "%s", authid)
+	format(vaultdata, charsmax(vaultdata), "%i#", knife_model[id])
+	nvault_get(g_vault, vaultkey, vaultdata, charsmax(vaultdata))
+	replace_all(vaultdata, charsmax(vaultdata), "#", " ")
 
-new  kosa[8];
+	new  kosa[8];
 
-parse(vaultdata,kosa,charsmax(kosa))
+	parse(vaultdata,kosa,charsmax(kosa))
 
-new kosastr = str_to_num(kosa)
+	new kosastr = str_to_num(kosa)
 
-knife_model[id] = kosastr
+	knife_model[id] = kosastr
 
-return PLUGIN_CONTINUE
+	return PLUGIN_CONTINUE
 }  
 /* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
 *{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1045\\ f0\\ fs16 \n\\ par }
