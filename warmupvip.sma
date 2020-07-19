@@ -12,7 +12,6 @@
 #define TIMER_TASK        123456
 #define RESTART_TASK      789123
 #define FLAGA_VIP ADMIN_LEVEL_H
-#define LOSOWANIE_VIP_OD 4
 
 new g_counter  
 
@@ -45,7 +44,7 @@ public plugin_init()
 	g_autoenabled = register_cvar("amx_warmup_enable","1")
 	g_speak = register_cvar("amx_warmup_cds","1")
 	g_autorestart = register_cvar("amx_warmup_time","120")
-	p_players = register_cvar("amx_warmup_vip_min_players","3")
+	p_players = register_cvar("amx_warmup_vip_min_players","10")
 	g_SyncRestartTimer = CreateHudSyncObj()
 	set_task(30.0, "RemVip", .flags="d")
 }
